@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Idle Scripts</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 28px;
+      color: #f0f6fc;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: #8b949e;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+    .scripts {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+      max-width: 600px;
+    }
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      background: #21262d;
+      border-bottom: 1px solid #30363d;
+    }
+    .card-header h2 {
+      font-size: 18px;
+      color: #f0f6fc;
+    }
+    .card-header .icon {
+      font-size: 24px;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .card-body p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #8b949e;
+      margin-bottom: 16px;
+    }
+    .card-body ul {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+    .card-body ul li {
+      font-size: 13px;
+      color: #8b949e;
+      padding: 4px 0;
+    }
+    .card-body ul li::before {
+      content: '• ';
+      color: #3fb950;
+    }
+    .code-block {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .code-label {
+      font-size: 11px;
+      color: #8b949e;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .code-block code {
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 12px;
+      color: #7ee787;
+      word-break: break-all;
+      display: block;
+    }
+    .btn-copy {
+      width: 100%;
+      padding: 12px;
+      background: #238636;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-copy:hover { background: #2ea043; }
+    .btn-copy:active { background: #238636; }
+    .btn-copy.copied {
+      background: #3fb950;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #484f58;
+      text-align: center;
+    }
+    .footer a {
+      color: #8b949e;
+      text-decoration: none;
+    }
+    .footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <h1>🎮 Anime Idle Scripts</h1>
+  <p class="subtitle">Ferramentas locais para anime-idle.com — sem relay, 100% no navegador</p>
+
+  <div class="scripts">
+
+    <!-- Gold Tracker -->
+    <div class="card">
+      <div class="card-header">
+        <span class="icon">🪙</span>
+        <h2>Gold Tracker</h2>
+      </div>
+      <div class="card-body">
+        <p>Rastreia ouro ganado, gasto, líquido e ganho/hora em tempo real. Lê o save do jogo a cada 1 segundo.</p>
+        <ul>
+          <li>Saldo atual, ganado, gasto, líquido</li>
+          <li>Gold por minuto e por hora</li>
+          <li>Temporizador da sessão</li>
+          <li>Painel arrastável — posição salva</li>
+          <li>Minimizar e reset</li>
+        </ul>
+        <div class="code-block">
+          <div class="code-label">Copie e cole no console (F12):</div>
+          <code id="gold-code">fetch('https://KauanSntz.github.io/anime-idle-scripts/gold-tracker.js?ts='+Date.now()).then(r=>r.text()).then(eval)</code>
+        </div>
+        <button class="btn-copy" onclick="copyCode('gold-code', this)">Copiar código</button>
+      </div>
+    </div>
+
+    <!-- Auto-Invocar -->
+    <div class="card">
+      <div class="card-header">
+        <span class="icon">⚔️</span>
+        <h2>Auto-Invocar</h2>
+      </div>
+      <div class="card-body">
+        <p>Auto-invocar com dois modos: <strong>Baú</strong> (×10/50/100) e <strong>Invocação</strong> (×10 por ouro). Modos exclusivos.</p>
+        <ul>
+          <li>Modo Baú: abre baús automaticamente</li>
+          <li>Modo Invocação: invoca ×10 por ouro</li>
+          <li>Parar ao encontrar boneco ou raridade</li>
+          <li>Mostrar nome do boneco</li>
+          <li>Delay configurável entre cliques</li>
+          <li>Painel arrastável — posição salva</li>
+        </ul>
+        <div class="code-block">
+          <div class="code-label">Copie e cole no console (F12):</div>
+          <code id="invocar-code">fetch('https://KauanSntz.github.io/anime-idle-scripts/auto-invocar.js?ts='+Date.now()).then(r=>r.text()).then(eval)</code>
+        </div>
+        <button class="btn-copy" onclick="copyCode('invocar-code', this)">Copiar código</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Scripts mantidos por <a href="https://github.com/KauanSntz">@KauanSntz</a> ·
+    <a href="https://github.com/KauanSntz/anime-idle-scripts">Ver no GitHub</a>
+  </div>
+
+  <script>
+    function copyCode(id, btn) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copiado!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copiar código';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
