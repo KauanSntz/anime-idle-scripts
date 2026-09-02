@@ -14,7 +14,7 @@
 ## 1. Visão Geral
 
 - **Jogo:** anime-idle em `anime-idle.com/play` (navegador Brave)
-- **Função:** rastrear ouro ganado, gasto, líquido e ganho/hora em tempo real
+- **Função:** rastrear ouro ganho, gasto, líquido e ganho/hora em tempo real
 - **100% local:** sem rede, sem servidor, sem relay
 - **Leitura:** `localStorage['anime_idle_save_v4'].gold` a cada 1 segundo
 - **UI:** painel fixo com shadow DOM, arrastável pelo header "Gold Tracker"
@@ -30,9 +30,9 @@ Lê o gold do save do jogo (`anime_idle_save_v4`) a cada 1 segundo via `setInter
 - **Saldo atual** — ouro atual do save
 - **Gold ganho** — quanto ganhou desde o início ou reset
 - **Gold gasto** — quanto gastou desde o início ou reset
-- **Saldo líquido** — ganado - gasto (pode ser negativo)
-- **Ganho por minuto** — ouro ganado / minutos decorridos
-- **Ganho por hora** — ouro ganado / horas decorridas
+- **Saldo líquido** — ganho - gasto (pode ser negativo)
+- **Ganho por minuto** — ouro ganho / minutos decorridos
+- **Ganho por hora** — ouro ganho / horas decorridas
 - **Tempo** — quanto tempo desde o início ou reset
 
 ### Seletor do save
@@ -181,8 +181,8 @@ Media ouro e XP de **cada batalha** lida do `#battle-log` (chat "Registro" do jo
   id: 'gt2-...',       // string única
   t: 1234567890,       // timestamp da batalha (ms)
   durMs: 45000,        // duração estimada da batalha (ms)
-  gold: 1234,          // ouro ganado (pode ser negativo)
-  xp: 567,             // XP ganado
+  gold: 1234,          // ouro ganho (pode ser negativo)
+  xp: 567,             // XP ganho
   wave: 12,            // wave number (null se PvP)
   world: 160,          // mundo atual (null se não detectado)
   phase: 9,            // fase atual (null se não detectado)
